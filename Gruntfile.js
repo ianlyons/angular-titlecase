@@ -12,22 +12,20 @@ module.exports = function(grunt) {
 
     karma: {
       options: {
-        files: [
-          'bower_components/angular/angular.min.js',
-          'bower_components/angular-mocks/angular-mocks.js',
-          'src/**/*.js'
-        ],
         frameworks: ['jasmine'],
         plugins: ['karma-jasmine', 'karma-phantomjs-launcher'],
-        browsers: ['PhantomJS']
+        browsers: ['PhantomJS'],
+        reporter: 'dots'
       },
       unit: {
         options: {
           files: [
-            { src: 'test/**/*.spec.js' }
+            'bower_components/angular/angular.min.js',
+            'bower_components/angular-mocks/angular-mocks.js',
+            'src/**/*.js',
+            'test/**/*.spec.js'
           ],
-          background: true,
-          reporter: 'dots'
+          singleRun: true
         }
       }
     },
@@ -45,12 +43,6 @@ module.exports = function(grunt) {
       test: {
         src: ['test/**/*.js']
       }
-    },
-
-    clean: ['.tmp/'],
-
-    concat: {
-      dist:{}
     },
 
     uglify: {
@@ -79,7 +71,7 @@ module.exports = function(grunt) {
           sourceMap: '<%= bwr.name %>.min.js.map'
         },
         files: {
-          '<%= bwr.name %>.min.js': ['./lib/index.js', './lib/*/*.js']
+          '<%= bwr.name %>.min.js': ['./src/**/*.js']
         }
       },
       src: {
@@ -89,7 +81,7 @@ module.exports = function(grunt) {
           compress: false
         },
         files: {
-          '<%= bwr.name %>.js': ['./lib/index.js', './lib/*/*.js']
+          '<%= bwr.name %>.js': ['./src/**/*.js']
         }
       },
       buildDist: {
@@ -133,8 +125,6 @@ module.exports = function(grunt) {
   // Build task
   grunt.registerTask('build', [
     'test',
-    'clean',
-    'concat',
     'uglify:buildSrc',
     'uglify:buildDist'
   ]);
