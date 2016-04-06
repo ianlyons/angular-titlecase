@@ -1,5 +1,6 @@
 (function() {
   'use strict';
+  console.log('running test!!11');
 
   describe('Filter: titlecase', function() {
     var $filter;

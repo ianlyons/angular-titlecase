@@ -6,7 +6,7 @@
   // This is pulled directly from https://gist.github.com/jeffjohnson9046/9789876 and brought into a published
   // module solely to make it easier to import into different projects.
 
-  module.filter('titlecase', function() {
+  module.filter('titlecase', [function() {
     var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
 
     return function (input) {
@@ -27,6 +27,6 @@
         return match.charAt(0).toUpperCase() + match.substr(1);
       });
     }
-  });
+  }]);
 
 })();
