@@ -3,11 +3,13 @@
 
   var module = angular.module('angular-titlecase', []);
 
+  // This is pulled directly from https://gist.github.com/jeffjohnson9046/9789876 and brought into a published
+  // module solely to make it easier to import into different projects.
+
   module.filter('titlecase', function() {
     var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
 
     return function (input) {
-      // Normalize input.
       input = input.toLowerCase();
 
       return input.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function(match, index, title) {
