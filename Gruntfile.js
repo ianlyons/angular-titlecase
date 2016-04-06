@@ -13,6 +13,8 @@ module.exports = function(grunt) {
     karma: {
       options: {
         files: [
+          'bower_components/angular/angular.min.js',
+          'bower_components/angular-mocks/angular-mocks.js',
           'src/**/*.js'
         ],
         frameworks: ['jasmine'],
