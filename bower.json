@@ -1,0 +1,27 @@
+{
+  "name": "angular-titlecase",
+  "version": "0.0.1",
+  "authors": [
+    "Ian Lyons <ilyons@gmail.com>"
+  ],
+  "description": "An angular filter for title casing text",
+  "main": "angular-titlecase.js",
+  "keywords": [
+    "Ian",
+    "Lyons",
+    "titlecase",
+    "title",
+    "case",
+    "angular",
+    "casing"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ianlyons",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
